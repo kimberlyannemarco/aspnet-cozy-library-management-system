@@ -1,0 +1,28 @@
+@model List<LibraryManagement.Models.LibraryBranch>
+
+<h1>Library Branch</h1>
+<i>@Model.Count records</i>
+<br><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 25%">Branch Name</th>
+            <th style="width: 30%">Address</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var librarybranch in Model)
+        {
+            <tr>
+                <td><a href="/LibraryBranch/Details/@librarybranch.LibraryBranchId">@librarybranch.BranchName</td>
+                <td>@librarybranch.BranchAddress</td>
+                <td>@librarybranch.LibraryBranchId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+ <div>
+    <a asp-action="Create" class="btn btn-success">➕ Add New Branch</a>
+</div>

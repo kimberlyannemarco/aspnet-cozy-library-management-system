@@ -1,0 +1,36 @@
+﻿@model LibraryManagement.Models.ErrorViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Error";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="p-4 rounded shadow-lg" style="background-color: #f8f9fa;">
+                <h1 class="text-center mb-4" style="color: #3A3A3A;">
+                    <i class="bi bi-exclamation-triangle"></i> Error
+                </h1>
+
+                <div class="alert alert-danger" role="alert" style="background-color: #f8f9fa;">
+                    <h4 class="alert-heading">Something went wrong</h4>
+                    <p>@Model.Message</p>
+                    @if (Model.ShowRequestId)
+                    {
+                        <p class="mb-0">
+                            Request ID: <code>@Model.RequestId</code>
+                        </p>
+                    }
+                </div>
+
+                <div class="text-center mt-4">
+                    <a asp-controller="Home" asp-action="Index"
+                       class="btn btn-sm px-4"
+                       style="background-color: #F1CA0A; border-color: #F1CA0A; color: #3A3A3A;">
+                        Go to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

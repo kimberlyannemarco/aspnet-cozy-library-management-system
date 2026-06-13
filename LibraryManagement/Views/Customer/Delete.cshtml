@@ -1,0 +1,10 @@
+@model LibraryManagement.Models.Customer
+
+<a asp-action="Details" class="btn btn-secondary" asp-route-id="@Model.CustomerId">Back</a>
+
+<h1>Delete Customer?</h1>
+<p>Delete <strong>@Model.CustomerFirstName @Model.CustomerLastName</strong>'s Account?</p>
+<form asp-action="Delete" method="post">
+    <input asp-for="CustomerId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Delete</button> <a href="/Customer" class="btn btn-secondary">Cancel</a>
+</form>

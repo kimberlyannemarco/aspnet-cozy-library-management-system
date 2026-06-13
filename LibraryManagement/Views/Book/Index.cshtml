@@ -1,0 +1,34 @@
+@model List<LibraryManagement.Models.Book>
+
+<h1>Books</h1>
+<i>@Model.Count records</i>
+<br><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 35%">Title</th>
+            <th style="width: 25%">Author</th>
+            <th>ISBN</th>
+            <th>Publication Year</th>
+            <th>Branch ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td><a href="/Book/Details/@book.BookId">@book.Title</td>
+                <td><a href="/Author/Details/@book.AuthorId">@book.Author.FirstName @book.Author.LastName</a></td>
+                <td>@book.ISBN</td>
+                <td>@book.PublicationYear</td>
+                <td>@book.LibraryBranchId</td>
+                <td>
+        </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+ <div>
+    <a asp-action="Create" class="btn btn-success">➕ Add New Book</a>
+</div>

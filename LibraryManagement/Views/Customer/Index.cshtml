@@ -1,0 +1,30 @@
+@model List<LibraryManagement.Models.Customer>
+
+<h1>Customers</h1>
+<i>@Model.Count records</i>
+<br><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Account Active Since</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td><a href="/Customer/Details/@customer.CustomerId">@customer.CustomerFirstName @customer.CustomerLastName</td>
+                <td>@customer.CustomerEmail</td>
+                <td>@customer.CustomerPhone</td>
+                <td>@customer.AcctOpenDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+ <div>
+    <a asp-action="Create" class="btn btn-success">➕ Add New Customer</a>
+</div>

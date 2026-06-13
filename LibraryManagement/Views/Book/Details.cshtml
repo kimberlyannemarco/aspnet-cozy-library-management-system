@@ -1,0 +1,45 @@
+@model LibraryManagement.ViewModels.BookViewModel
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>
+
+<h1><i>@Model.Book.Title</i></h1>
+<br>
+<p>Book ID: @Model.Book.BookId</p>
+<p>Author: <a href="/Author/Details/@Model.Book.AuthorId">@Model.Book.Author.FirstName @Model.Book.Author.LastName </a> </p>
+<p>ISBN: @Model.Book.ISBN</p>
+<p>Publication Year: @Model.Book.PublicationYear</p>
+<p>Branch ID: @Model.Book.LibraryBranchId</p>
+
+<div class="mb-4">
+    <p>Average Rating: @Model.AverageRating.ToString("F1") / 5</p>
+</div>
+
+<h6>Reviews (@Model.Ratings.Count)</h6>
+@foreach (var rating in Model.Ratings)
+{
+    <div class="card mb-2">
+        <div class="card-body">
+            @if (!string.IsNullOrEmpty(rating.Comment))
+            {
+                <p class="mt-2">@rating.Comment</p>
+            }
+        </div>
+    </div>
+}
+<h6>Add Rating</h6>
+<form asp-action="Rate" method="post">
+    <input type="hidden" name="bookId" value="@Model.Book.BookId" />
+    
+    <select name="rating" class="form-select d-inline w-auto" style="width: 120px;">
+        <option value="1">1 ★</option>
+        <option value="2">2 ★★</option>
+        <option value="3">3 ★★★</option>
+        <option value="4">4 ★★★★</option>
+        <option value="5">5 ★★★★★</option>
+    </select>
+    <input type="text" name="comment" class="form-control d-inline ms-2 w-50" placeholder="Review:" />
+    <button type="submit" class="btn btn-primary ms-2">Rate</button>
+</form>
+<br>
+<a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Book.BookId">Edit</a>
+<a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.Book.BookId">Delete Book</a>

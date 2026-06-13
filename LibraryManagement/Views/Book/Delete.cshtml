@@ -1,0 +1,10 @@
+@model LibraryManagement.Models.Book
+
+<a asp-action="Details" class="btn btn-secondary" asp-route-id="@Model.BookId">Back</a>
+
+<h1>Delete Book?</h1>
+<p>Delete "<strong>@Model.Title</strong>" by @Model.Author.FirstName @Model.Author.LastName?</p>
+<form asp-action="Delete" method="post">
+    <input asp-for="BookId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Delete</button> <a href="/Book" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,31 @@
+@model LibraryManagement.Models.Customer
+
+<h1>Edit <i>@Model.CustomerFirstName @Model.CustomerLastName</i> Details</h1>
+
+<form asp-action="Edit" method="post">
+    <input asp-for="CustomerId" type="hidden" />
+    
+    <div class="form-group">
+        <label>First Name:</label>
+        <input asp-for="CustomerFirstName" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input asp-for="CustomerLastName" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label>Email:</label>
+        <input asp-for="CustomerEmail" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Contact No.:</label>
+        <input asp-for="CustomerPhone" class="form-control" />
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Save Changes</button> <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+
+

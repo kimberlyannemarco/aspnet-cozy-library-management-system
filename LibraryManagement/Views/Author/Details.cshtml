@@ -1,0 +1,39 @@
+@model LibraryManagement.Models.Author
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>
+
+<h1><i>@Model.FirstName @Model.LastName</i></h1>
+<br>
+<p>Author ID: @Model.AuthorId</p>
+<p>Birth Year: @Model.BirthYear</p>
+<p>No. of Published Books: @Model.BooksPublished</p>
+<p>Available Books in Library:</p>
+    @if (Model.Books.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>ISBN</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+    @foreach (var book in Model.Books)
+    {
+                <tr>
+                    <td><a asp-action="Details" asp-controller="Book" asp-route-id="@book.BookId">@book.Title</a></td>
+                    <td>@book.ISBN</td>
+                    <td>@book.PublicationYear</td>
+                </tr>
+    }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No books found for this author.</p>
+    }
+
+<a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.AuthorId">Edit</a>
+<a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.AuthorId">Delete</a>

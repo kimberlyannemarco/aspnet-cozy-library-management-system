@@ -1,0 +1,119 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+  background-color: #F5EFE6;
+  color: #3A3A3A;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 350 !important;
+}
+
+/* Target your specific Book Index table */
+table.table {
+    background-color: #f8f9fa;      /* Light gray background */
+    border-radius: 10px;            /* Rounded corners */
+    overflow: hidden;              /* Clips corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Subtle shadow */
+}
+
+/* Table header */
+table.table thead th {
+    background: rgba(241, 202, 10, 0.505) !important;
+    color: rgb(0, 0, 0)!important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 15px 10px;
+    border: none;
+}
+
+/* Table body rows - alternating colors */
+table.table tbody tr:nth-child(even) {
+    background-color: #f8f9ff;     /* Light blue tint */
+}
+
+table.table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* Table cells */
+table.table td {
+    padding: 12px 10px;
+    border-color: #e9ecef;
+    vertical-align: middle;
+}
+
+/* Borders */
+table.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #dee2e6;
+}
+/* Table non-link text = GRAY, Links stay colorful */
+table.table td:not(:has(a)) {
+    color: #6c757d !important;  /* Gray for text-only cells */
+}
+
+table.table td a {
+    color: inherit !important;  /* Links keep their special colors */
+}
+
+/* Book Index table links - Title column */
+table a[href*="/Book/Details/"] {
+    color: #000000 !important;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+table a[href*="/Book/Details/"]:hover {
+    color: #000000 !important;
+    font-weight: 750;
+}
+
+/* Author links - 2nd column */
+table a[href*="/Author/Details/"] {
+    color: #000000 !important;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+table a[href*="/Author/Details/"]:hover {
+    color: #000000 !important;
+    font-weight: 750;
+}

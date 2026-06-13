@@ -1,0 +1,10 @@
+@model LibraryManagement.Models.LibraryBranch
+
+<a asp-action="Details" class="btn btn-secondary" asp-route-id="@Model.LibraryBranchId">Back</a>
+
+<h1>Delete Branch?</h1>
+<p>Delete <strong>@Model.BranchName</strong>'s Account?</p>
+<form asp-action="Delete" method="post">
+    <input asp-for="LibraryBranchId" type="hidden" />
+    <button type="submit" class="btn btn-danger">Delete</button> <a href="/LibraryBranch" class="btn btn-secondary">Cancel</a>
+</form>

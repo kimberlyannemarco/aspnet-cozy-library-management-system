@@ -1,0 +1,30 @@
+@model List<LibraryManagement.Models.Author>
+
+<h1>Authors</h1>
+<i>@Model.Count records</i>
+<br><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 25%">Name</th>
+            <th style="width: 18%">Birth Year</th>
+            <th style="width: 20%">Published Books</th>
+            <th>Author ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td><a href="/Author/Details/@author.AuthorId">@author.FirstName @author.LastName</td>
+                <td>@author.BirthYear</td>
+                <td>@author.BooksPublished</td>
+                <td>@author.AuthorId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+ <div>
+    <a asp-action="Create" class="btn btn-success">➕ Add New Author</a>
+</div>

@@ -1,0 +1,12 @@
+@model LibraryManagement.Models.LibraryBranch
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>
+
+<h1><i>@Model.BranchName</i></h1>
+<br>
+<p>Branch ID: @Model.LibraryBranchId</p>
+<p>Branch Name: @Model.BranchName</p>
+<p>Address: @Model.BranchAddress</p>
+
+<a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.LibraryBranchId">Edit</a>
+<a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.LibraryBranchId">Delete</a>
